@@ -12,7 +12,7 @@ public class CameraMovement : MonoBehaviour {
         // you'll also have to create another input axis named "Roll", with recommended values of E (positive) and Q (negative)
         WASDMovement(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"), Input.GetAxis("UpDown")); // WASD and Space/CRTL input for FWD, BWD, L, R, UP, DOWN
         MouseRotation(Input.GetAxisRaw("Mouse X"),Input.GetAxisRaw("Mouse Y")); // Mouse input for pitch and yaw
-        PitchRotation(Input.GetAxis("Roll"));
+        RollRotation(Input.GetAxis("Roll"));
 	}
 
     private void WASDMovement(float f, float r, float u) // f is forward/backward axis input, r is right/left axis input, u is up/down axis input
@@ -32,7 +32,7 @@ public class CameraMovement : MonoBehaviour {
         transform.Rotate(rotationVector);
     }
 
-    private void PitchRotation(float c) // q and e roll inputs 
+    private void RollRotation(float c) // q and e roll inputs 
     {
         Vector3 rotationVector = c * Vector3.back; // negative forward vector for roll
         transform.Rotate(rotationVector);
